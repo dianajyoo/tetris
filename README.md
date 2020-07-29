@@ -13,3 +13,7 @@ View [here](https://dianajyoo.github.io/tetris/)
 
 - JavaScript
 - HTML5 Canvas
+
+### Credit
+
+Music featured is Nightfall by Kavinsky
