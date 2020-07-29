@@ -8,11 +8,6 @@
     />
     <link href="main.css" rel="stylesheet" type="text/css" />
     <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="public/images/favicon.ico"
-    />
-    <link
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
       rel="stylesheet"
     />
@@ -21,13 +16,64 @@
 
   <body>
     <main id="root">
-      <div class="container">
-        <canvas
-          id="canvas"
-          width="480"
-          height="660"
-          style="border: 1px solid #000;"
-        ></canvas>
+      <audio loop id="audio" src="audio/kavinsky.mp3"></audio>
+      <audio id="game-over" src="audio/game-over.mp3"></audio>
+
+      <div class="hide modal">
+        <div class="flex-col">
+          <h3 class="game-over">Game Over</h3>
+          <h4 class="title">Final Score:</h4>
+          <h4 class="final-score">0</h4>
+        </div>
+        <button type="button" class="try-again">Try Again</button>
+      </div>
+
+      <div class="flex-col container">
+        <header class="title"><h1>Tetris</h1></header>
+        <div class="flex-row board-wrapper">
+          <canvas id="canvas" class="board" width="480" height="660"></canvas>
+          <aside>
+            <div class="flex-col info-wrapper">
+              <h3 class="title">
+                Score:
+              </h3>
+              <div class="info score">0</div>
+            </div>
+            <div class="flex-col info-wrapper">
+              <h3 class="title">
+                Time:
+              </h3>
+              <div class="info time">00:00</div>
+            </div>
+            <div class="flex-col info-wrapper">
+              <h3 class="title">
+                Controls:
+              </h3>
+              <div class="flex-col info controls">
+                <div class="flex-row key">
+                  <i class="far fa-arrow-alt-circle-up"></i>
+                  <h5>Rotate</h5>
+                </div>
+                <div class="flex-row key">
+                  <i class="far fa-arrow-alt-circle-down"></i>
+                  <h5>Down</h5>
+                </div>
+                <div class="flex-row key">
+                  <i class="far fa-arrow-alt-circle-right"></i>
+                  <h5>Right</h5>
+                </div>
+                <div class="flex-row key">
+                  <i class="far fa-arrow-alt-circle-left"></i>
+                  <h5>Left</h5>
+                </div>
+                <div class="flex-row key">
+                  <i class="far fa-play-circle"></i>
+                  <h5>Space Bar for Music</h5>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
     </main>
     <script src="src/tetris.js"></script>
