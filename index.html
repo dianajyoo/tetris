@@ -19,56 +19,58 @@
       <audio loop id="audio" src="audio/kavinsky.mp3"></audio>
       <audio id="game-over" src="audio/game-over.mp3"></audio>
 
-      <div class="hide modal">
-        <div class="flex-col">
-          <h3 class="game-over">Game Over</h3>
-          <h4 class="title">Final Score:</h4>
-          <h4 class="final-score">0</h4>
+      <div class="modal modal--hide">
+        <div class="container--flex-col">
+          <h3 class="container__h3">Game Over</h3>
+          <h4 class="container__h4 container__h4--secondary">Final Score:</h4>
+          <h4 id="final-score" class="container__h4 container__h4--secondary">
+            0
+          </h4>
         </div>
-        <button type="button" class="try-again">Try Again</button>
+        <button type="button" class="btn">Play Again</button>
       </div>
 
-      <div class="flex-col container">
-        <header class="title"><h1>Tetris</h1></header>
-        <div class="flex-row board-wrapper">
-          <canvas id="canvas" class="board" width="480" height="660"></canvas>
+      <div class="container container--flex-col">
+        <header class="header"><h1 class="header__h1">Tetris</h1></header>
+        <div class="container__div container--flex-row">
+          <canvas id="board" class="canvas" width="480" height="660"></canvas>
           <aside>
-            <div class="flex-col info-wrapper">
-              <h3 class="title">
+            <div class="aside container--flex-col">
+              <h3 class="aside__h3">
                 Score:
               </h3>
-              <div class="info score">0</div>
+              <div id="score" class="aside__div">0</div>
             </div>
-            <div class="flex-col info-wrapper">
-              <h3 class="title">
+            <div class="aside container--flex-col">
+              <h3 class="aside__h3">
                 Time:
               </h3>
-              <div class="info time">00:00</div>
+              <div id="time" class="aside__div">00:00</div>
             </div>
-            <div class="flex-col info-wrapper">
-              <h3 class="title">
+            <div class="aside container--flex-col">
+              <h3 class="aside__h3">
                 Controls:
               </h3>
-              <div class="flex-col info controls">
-                <div class="flex-row key">
+              <div class="aside__div aside__div--controls container--flex-col">
+                <div class="aside__div--key container--flex-row">
                   <i class="far fa-arrow-alt-circle-up"></i>
-                  <h5>Rotate</h5>
+                  <h5 class="aside__h5">Rotate</h5>
                 </div>
-                <div class="flex-row key">
+                <div class="aside__div--key container--flex-row">
                   <i class="far fa-arrow-alt-circle-down"></i>
-                  <h5>Down</h5>
+                  <h5 class="aside__h5">Down</h5>
                 </div>
-                <div class="flex-row key">
+                <div class="aside__div--key container--flex-row">
                   <i class="far fa-arrow-alt-circle-right"></i>
-                  <h5>Right</h5>
+                  <h5 class="aside__h5">Right</h5>
                 </div>
-                <div class="flex-row key">
+                <div class="aside__div--key container--flex-row">
                   <i class="far fa-arrow-alt-circle-left"></i>
-                  <h5>Left</h5>
+                  <h5 class="aside__h5">Left</h5>
                 </div>
-                <div class="flex-row key">
+                <div class="aside__div--key container--flex-row">
                   <i class="far fa-play-circle"></i>
-                  <h5>Space Bar for Music</h5>
+                  <h5 class="aside__h5">Space Bar for Music</h5>
                 </div>
               </div>
             </div>

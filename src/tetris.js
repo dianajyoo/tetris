@@ -1,4 +1,4 @@
-const canvas = document.getElementById('canvas');
+const canvas = document.getElementById('board');
 const context = canvas.getContext('2d');
 const { width, height } = canvas;
 const ROWS = 22;
@@ -73,8 +73,6 @@ let audioPlay = true;
 context.scale(SCALE, SCALE);
 
 function init() {
-  console.log('Init');
-
   currentBlock = getNextBlock();
   positions = [...BLOCKS[currentBlock]];
   originX = positions[2].col;
@@ -320,7 +318,6 @@ function drop() {
     moveDown();
     offsetY += 1;
   } else {
-    console.log('Landed!');
     updateGame();
   }
 }
@@ -383,7 +380,6 @@ function moveBlock(e) {
         moveDown();
         offsetY += 1;
       } else {
-        console.log('Landed!');
         updateGame();
       }
       break;
@@ -417,7 +413,7 @@ function getNextBlock() {
 }
 
 function updateScore() {
-  const container = document.querySelector('.score');
+  const container = document.getElementById('score');
   // Multiple level one score by number of rows cleared
   // and add to total score so far
   score += multiplier * completedLines.length;
@@ -425,7 +421,7 @@ function updateScore() {
 }
 
 function resetScore() {
-  const container = document.querySelector('.score');
+  const container = document.getElementById('score');
 
   score = 0;
   container.innerHTML = score;
@@ -438,7 +434,7 @@ function startTime() {
 function updateTime() {
   seconds += 1;
 
-  const container = document.querySelector('.time');
+  const container = document.getElementById('time');
   const min = seconds > 0 ? parseInt(seconds / 60, 10) : '0';
   const sec = seconds > 0 ? seconds % 60 : '0';
 
@@ -460,11 +456,11 @@ function formatTime(min, sec) {
 function showGameOver() {
   const modal = document.querySelector('.modal');
   const container = document.querySelector('.container');
-  const finalScore = document.querySelector('.final-score');
+  const finalScore = document.getElementById('final-score');
   const audio = document.getElementById('game-over');
 
   finalScore.innerHTML = score;
-  modal.className = 'flex-col modal';
+  modal.className = 'modal modal--show';
   container.style.filter = 'brightness(50%)';
   audio.play();
 }
@@ -473,7 +469,7 @@ function hideGameOver() {
   const modal = document.querySelector('.modal');
   const container = document.querySelector('.container');
 
-  modal.className = 'hidden modal';
+  modal.className = 'modal modal--hide';
   container.style.filter = 'none';
 }
 
